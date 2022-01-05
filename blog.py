@@ -16,7 +16,7 @@ def login_required(f):
             return redirect(url_for("login"))
 
     return decorated_function
-# Kullanıcı Kayıt Formu
+# Kullanıcı Kayıt Formu merhaba
 class RegisterForm(Form):
     name = StringField("İsim Soyisim",validators=[validators.Length(min = 4,max = 25)])
     username = StringField("Kullanıcı Adı",validators=[validators.Length(min = 5,max = 35)])
