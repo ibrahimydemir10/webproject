@@ -2,14 +2,16 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build') {
             steps {
-                echo 'Building..'
+                cp /var/jenkins_home/workspace/github-job .
+                sh createimage.sh
             }
         }
         stage('Push') {
             steps {
-                echo 'Testing..'
+                sh pushimage.sh
             }
         }
         stage('Deploy') {
