@@ -16,7 +16,7 @@ def login_required(f):
             return redirect(url_for("login"))
 
     return decorated_function
-# Kullanıcı Kayıt Formu merhabaaaaaaa
+# Kullanıcı Kayıt Formu 
 class RegisterForm(Form):
     name = StringField("İsim Soyisim",validators=[validators.Length(min = 4,max = 25)])
     username = StringField("Kullanıcı Adı",validators=[validators.Length(min = 5,max = 35)])
@@ -44,7 +44,7 @@ Containername=str (os.environ["HOSTNAME"])
 
 @app.route("/")
 def index():
-   return render_template("index.html")
+   return render_template("index.html",Containername=Containername)
 @app.route("/about")
 def about():
     return render_template("about.html",Containername=Containername)
