@@ -45,6 +45,9 @@ Containername=str (os.environ["HOSTNAME"])
 @app.route("/")
 def index():
    return render_template("index.html",Containername=Containername)
+@app.route("/test")
+def test():
+   return render_template("test.html",Containername=Containername)
 @app.route("/about")
 def about():
     return render_template("about.html",Containername=Containername)
