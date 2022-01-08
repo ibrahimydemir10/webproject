@@ -167,7 +167,7 @@ def addarticle():
 
         cursor = mysql.connection.cursor()
 
-        date = "04.07.1992"
+        
 
         sorgu = "Insert into articles(title,author,content,date) VALUES(%s,%s,%s,%s)"
 
