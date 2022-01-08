@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask,render_template,flash,redirect,url_for,session,logging,request
 from flask_mysqldb import MySQL
 from wtforms import Form,StringField,TextAreaField,PasswordField,validators
@@ -162,10 +163,11 @@ def addarticle():
     if request.method == "POST" and form.validate():
         title = form.title.data
         content = form.content.data
+        date = str (datetime.now)
 
         cursor = mysql.connection.cursor()
 
-        sorgu = "Insert into articles(title,author,content) VALUES(%s,%s,%s)"
+        sorgu = "Insert into articles(title,author,content,date) VALUES(%s,%s,%s,%s)"
 
         cursor.execute(sorgu,(title,session["username"],content))
 
