@@ -163,7 +163,7 @@ def addarticle():
     if request.method == "POST" and form.validate():
         title = form.title.data
         content = form.content.data
-        date = str (datetime.now)
+        date = str (datetime.now())
 
         cursor = mysql.connection.cursor()
 
