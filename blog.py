@@ -166,9 +166,11 @@ def addarticle():
 
         cursor = mysql.connection.cursor()
 
-        sorgu = "Insert into articles(title,author,content) VALUES(%s,%s,%s)"
+        date = "04.07.1992"
 
-        cursor.execute(sorgu,(title,session["username"],content))
+        sorgu = "Insert into articles(title,author,content,date) VALUES(%s,%s,%s)"
+
+        cursor.execute(sorgu,(title,session["username"],content,date))
 
         mysql.connection.commit()
 
