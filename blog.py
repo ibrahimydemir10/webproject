@@ -168,7 +168,7 @@ def addarticle():
 
         date = "04.07.1992"
 
-        sorgu = "Insert into articles(title,author,content,date) VALUES(%s,%s,%s)"
+        sorgu = "Insert into articles(title,author,content,date) VALUES(%s,%s,%s,%s)"
 
         cursor.execute(sorgu,(title,session["username"],content,date))
 
