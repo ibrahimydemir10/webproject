@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt-get update -y
-RUN apt-get install -y python
+RUN apt-get install -y python3
 RUN apt-get install -y pip
 RUN  apt-get install -y libmysqlclient-dev
 ENV MYSQL_HOST="db"
